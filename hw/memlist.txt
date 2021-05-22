@@ -1,0 +1,4 @@
+gemm_accelerator_plm_block_in_dma32 8192 32 1w:0r 0w:1r
+gemm_accelerator_plm_block_out_dma32 4096 32 1w:0r 0w:1r
+gemm_accelerator_plm_block_in_dma64 8192 32 2w:0r 0w:16r
+gemm_accelerator_plm_block_out_dma64 4096 32 16w:0r 0w:16r
