@@ -27,6 +27,9 @@ make gemm_accelerator_stratus-sim
 ```
 This will run a behavioural simulation, followed by HLS and then an RTL simulation.
 
+## SoC Design
+The image below shows the system used to evaluate the accelerator. The CPU, memory and auxiliary tiles are generated using the ESP SoC Generator.
+
 ![SoC Design with accelerator](/gemm_accelerator.png)
 
 ## Accelerator operation
@@ -62,3 +65,6 @@ The accelerator is divided into 3 phases - a load phase (to read input matrices 
 
 ## Limitations
 The accelerator only accepts matrices whose dimensions are a multiple of 64.
+
+## Relevant links
+[Embedded Scalable Platform (ESP)](https://esp.cs.columbia.edu): An open-source research platform for heteregeneous SoC design
