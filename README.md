@@ -27,11 +27,6 @@ make gemm_accelerator_stratus-sim
 ```
 This will run a behavioural simulation, followed by HLS and then an RTL simulation.
 
-## SoC Design
-The image below shows the system used to evaluate the accelerator. The CPU, memory and auxiliary tiles are generated using the ESP SoC Generator.
-
-![SoC Design with accelerator](/gemm_accelerator.png)
-
 ## Accelerator operation
 ### Phases
 The accelerator is divided into 3 phases - a load phase (to read input matrices from memory), a compute phase (to perform GEMM) and a store phase (to write the output back to memory). All 3 phases are implemented as parallel processes and handshakes are defined for communicating among themselves.
@@ -47,6 +42,11 @@ The accelerator is divided into 3 phases - a load phase (to read input matrices 
   * We use loop unrolling to parallelize multiplies, accumulates and PLM accesses.
   * We sample the memory arrays into a flattened register array before the arithmetic operations
   * We pipeline all the operations across different iterations to maximize resource utilization.
+
+## SoC design for evaluation
+The image below shows the system used to evaluate the accelerator. The CPU, memory and auxiliary tiles are generated using the ESP SoC Generator.
+
+![SoC Design with accelerator](/gemm_accelerator.png)
 
 ## Evaluation on a Xilinx VCU118 FPGA board
 ### Performance
@@ -64,7 +64,7 @@ The accelerator is divided into 3 phases - a load phase (to read input matrices 
 | **Optmized GEMM** | **6761**	| **3371** |
 
 ## Limitations
-The accelerator only accepts matrices whose dimensions are a multiple of 64.
+* The accelerator only accepts matrices whose dimensions are a multiple of 64.
 
 ## Relevant links
-[Embedded Scalable Platform (ESP)](https://esp.cs.columbia.edu): An open-source research platform for heteregeneous SoC design
+* [Embedded Scalable Platforms (ESP)](https://esp.cs.columbia.edu): An open-source research platform for heteregeneous SoC design
