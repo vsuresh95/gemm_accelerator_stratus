@@ -65,6 +65,7 @@ The image below shows the system used to evaluate the accelerator. The CPU, memo
 
 ## Limitations
 * The accelerator only accepts matrices whose dimensions are a multiple of 64.
+* The current implementation requires the second matrix in the multiply to be transposed in memory. However, the algorithm can be easily modified to accept non-transposed matrices. To do this, the load phase must be modified to fetch 64x64 blocks in column major order rather than row major order.
 
 ## Relevant links
 * [Embedded Scalable Platforms (ESP)](https://esp.cs.columbia.edu): An open-source research platform for heteregeneous SoC design
