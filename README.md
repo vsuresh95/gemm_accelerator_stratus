@@ -28,6 +28,7 @@ make gemm_accelerator_stratus-sim
 This will run a behavioural simulation, followed by HLS and then an RTL simulation.
 
 ## Accelerator operation
+Code reference: [/hw/src/gemm_accelerator.cpp](https://github.com/vsuresh95/gemm_accelerator_stratus/blob/7f18cec1c4786f52e1e6732afbd9da0f8da52a7f/hw/src/gemm_accelerator.cpp)
 ### Phases
 The accelerator is divided into 3 phases - a load phase (to read input matrices from memory), a compute phase (to perform GEMM) and a store phase (to write the output back to memory). All 3 phases are implemented as parallel processes and handshakes are defined for communicating among themselves.
 
